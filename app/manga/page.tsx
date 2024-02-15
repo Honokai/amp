@@ -21,20 +21,23 @@ export default function Page() {
   ]
   
   return (
-    <main className="w-screen">
-      <section>
-        
-      </section>
-      <section className="flex sm:flex-col xl:flex-row" aria-label="manga-grid">
-        <div className="min-w-[10vw]">sidebar</div>
-        <section className="py-4 px-6 sm:px-2 [&>*:not(first)]:mt-3 max-w-[89vw]">
+    <main className="w-screen flex">
+      <section className="flex flex-1 sm:flex-col xl:flex-row" aria-label="manga-grid">
+        <section className="py-4 px-6 sm:px-2 [&>*:not(first)]:mt-3 flex-[5] grid">
           <FeaturedManga/>
-          <div className="grid sm:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-10 gap-5 max-w-full">
+          <div className="grid sm:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8 gap-5 max-w-full">
             {items.map(manga => (
               <MangaCard key={randomUUID()} manga={manga} />
             ))}
           </div>
         </section>
+        <div className="flex-1">
+          <h1>
+            alkjdlaskjdlas
+            asldkjasldjlasd
+            asdkjasldj
+          </h1>
+        </div>
       </section>
     </main>
   )

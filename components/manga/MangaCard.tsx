@@ -6,10 +6,11 @@ import Rating from "../shared/Rating";
 import { TManga, TMangas } from "../shared/types";
 
 type TMangaCardProps = {
-  manga: TManga
+  manga: TManga,
+  enableRating?: boolean
 }
 
-function MangaCard({ manga }: TMangaCardProps) {
+function MangaCard({ manga, enableRating }: TMangaCardProps) {
   const { name, rating, description } = manga
 
   return (
@@ -21,7 +22,7 @@ function MangaCard({ manga }: TMangaCardProps) {
         <CardContent>
           <CardTitle>{name}</CardTitle>
           <CardDescription className="group-hover:text-wrap">{description}</CardDescription>
-          <Rating rating={rating}/>
+          <Rating enabled={enableRating} rating={rating}/>
         </CardContent>
       </Card>
     </Link>

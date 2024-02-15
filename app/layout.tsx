@@ -27,6 +27,9 @@ export default function RootLayout({
         >
           <TopBar />
           {children}
+          {/* <div className="w-screen bg-secondary relative flex justify-center py-4">
+            All rights reserved to MangaReader. {new Date().getFullYear()} &#169; 
+          </div> */}
         </ThemeProvider>
       </body>
     </html>

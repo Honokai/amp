@@ -66,6 +66,34 @@ function Comments(): ReactElement {
         { id: 55, user: "someone's name", comment: "askdnjaslkjd laskj dlasjkld "},
         { id: 5435, user: "someone's name", comment: "askdnjaslkjd laskj dlasjkld "},
       ]
+    },
+    {
+      id: 8686,
+      user: "someone's name",
+      comment: "askdnjaslkjd laskj dlasjkld ",
+      comments: [
+        { id: 1232, user: "someone's name", comment: "askdnjaslkjd laskj dlasjkld "},
+        { id: 343566, user: "someone's name", comment: "askdnjaslkjd laskj dlasjkld "},
+        { id: 123, user: "someone's name", comment: "askdnjaslkjd laskj dlasjkld "},
+        { id: 4242, user: "someone's name", comment: "askdnjaslkjd laskj dlasjkld "},
+        { id: 434, user: "someone's name", comment: "askdnjaslkjd laskj dlasjkld "},
+        { id: 55, user: "someone's name", comment: "askdnjaslkjd laskj dlasjkld "},
+        { id: 5435, user: "someone's name", comment: "askdnjaslkjd laskj dlasjkld "},
+      ]
+    },
+    {
+      id: 8686,
+      user: "someone's name",
+      comment: "askdnjaslkjd laskj dlasjkld ",
+      comments: [
+        { id: 1232, user: "someone's name", comment: "askdnjaslkjd laskj dlasjkld "},
+        { id: 343566, user: "someone's name", comment: "askdnjaslkjd laskj dlasjkld "},
+        { id: 123, user: "someone's name", comment: "askdnjaslkjd laskj dlasjkld "},
+        { id: 4242, user: "someone's name", comment: "askdnjaslkjd laskj dlasjkld "},
+        { id: 434, user: "someone's name", comment: "askdnjaslkjd laskj dlasjkld "},
+        { id: 55, user: "someone's name", comment: "askdnjaslkjd laskj dlasjkld "},
+        { id: 5435, user: "someone's name", comment: "askdnjaslkjd laskj dlasjkld "},
+      ]
     }
   ]
 
@@ -80,8 +108,9 @@ function Comments(): ReactElement {
   }, [])
 
   return (
-    <div className="grid">
-      <h1 className="py-2 text-lg">Comments {contador}</h1>
+    <div className="">
+      <h1 className="pt-2 text-lg">Comments {contador}</h1>
+      <hr className="my-2"/>
       {loading ? (
         <div className="grid gap-2 py-4">
           <div className="flex items-center space-x-4">
@@ -107,7 +136,7 @@ function Comments(): ReactElement {
           </div>
         </div>
       ) : (
-        <ScrollArea className="max-h-[50vh]">
+        <ScrollArea className="h-[30rem]">
           {comments.map((i, index) => (
             <div key={i.id}>
               <Comment />

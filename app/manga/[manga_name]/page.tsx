@@ -3,7 +3,9 @@ import Comment from "@/components/shared/Comment";
 import Comments from "@/components/shared/Comments";
 import Rating from "@/components/shared/Rating";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import Image from "next/image";
+import Link from "next/link";
 import { useParams } from "next/navigation"
 
 function Page() {
@@ -32,9 +34,18 @@ function Page() {
               </div>
               <div className="flex flex-col mt-2">
                 <span className="text-primary">Rating</span>
-                <Rating alwaysVisible={true} rating={rating}/>
+                <Rating enabled alwaysVisible={true} rating={rating}/>
               </div>
             </div>
+          </div>
+          <div>
+            <span className="text-lg">Chapters available</span>
+            <hr className="my-2" />
+            <ScrollArea className="h-60 border border-secondary/50 p-4 mt-2 rounded">
+              {Array(100).fill(1).map((i, index) => (
+                <Link className="hover:text-accent block" href={"#"} key={index}>Test {index}</Link>
+              ))}
+            </ScrollArea>
           </div>
           <Comments />
         </div>

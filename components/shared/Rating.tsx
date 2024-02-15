@@ -4,10 +4,11 @@ import { MouseEvent, useCallback, useState } from "react"
 
 type TRatingProps = {
   rating: number,
-  alwaysVisible?: boolean
+  alwaysVisible?: boolean,
+  enabled?: boolean
 }
 
-export default function Rating({ rating, alwaysVisible }: TRatingProps) {
+export default function Rating({ rating, alwaysVisible, enabled }: TRatingProps) {
   const stars = resolveRating(rating)
 
   const [mouseIn, setMouseIn] = useState<boolean>(false)
@@ -25,7 +26,7 @@ export default function Rating({ rating, alwaysVisible }: TRatingProps) {
   }
 
   return (
-    <div onMouseLeave={(e) => handleMouseEvent(e, 'saida')} onMouseEnter={(e) => handleMouseEvent(e, 'entrada')} className={`${!alwaysVisible ? 'invisible group-hover:visible ' : ''}py-2 flex items-center`}>
+    <div onMouseLeave={(e) => enabled && handleMouseEvent(e, 'saida')} onMouseEnter={(e) => enabled && handleMouseEvent(e, 'entrada')} className={`${!alwaysVisible ? 'invisible group-hover:visible ' : ''}py-2 flex items-center`}>
       <span>{rating}</span>
       <span className="flex ml-2 items-center">
         {mouseIn ? (

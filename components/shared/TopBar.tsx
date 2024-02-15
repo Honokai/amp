@@ -20,7 +20,7 @@ import {
 
 export default function TopBar(): ReactElement {
   return (
-    <div className="w-full flex bg-secondary py-4 px-4">
+    <div className="w-full flex bg-secondary py-2 px-4">
       <div className="flex flex-1">
         <Button className="bg-transparent hover:bg-primary/20 p-2 rounded-full">
           <Menu className="text-primary"/>
@@ -33,7 +33,7 @@ export default function TopBar(): ReactElement {
       <div className="flex flex-1 justify-end items-center pr-4">
         <DropdownMenu>
           <DropdownMenuTrigger className="outline-none">
-            <Avatar>
+            <Avatar className="w-8 h-8">
               <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
               <AvatarFallback>O_O</AvatarFallback>
             </Avatar>
